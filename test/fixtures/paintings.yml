@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_painting: 
+  name_painting: MyString
+  img_root: MyString
+  type: 
+  dominant_color: MyString
+  price: 9.99
+  height: 9.99
+  width: 9.99
+
+two:
+  id_painting: 
+  name_painting: MyString
+  img_root: MyString
+  type: 
+  dominant_color: MyString
+  price: 9.99
+  height: 9.99
+  width: 9.99

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id painting:</strong>
+  <%= @painting.id_painting %>
+</p>
+
+<p>
+  <strong>Name painting:</strong>
+  <%= @painting.name_painting %>
+</p>
+
+<p>
+  <strong>Img root:</strong>
+  <%= @painting.img_root %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @painting.type %>
+</p>
+
+<p>
+  <strong>Dominant color:</strong>
+  <%= @painting.dominant_color %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @painting.price %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @painting.height %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @painting.width %>
+</p>
+
+<%= link_to 'Edit', edit_painting_path(@painting) %> |
+<%= link_to 'Back', paintings_path %>
