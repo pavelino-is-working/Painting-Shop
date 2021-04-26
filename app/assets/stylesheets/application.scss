@@ -14,3 +14,27 @@
  *= require_self
  */
 @import "bulma";
+
+.section.section-white
+{
+	background: white;
+}
+.image.is-80x60
+{
+height: 80px;
+width: 60px;
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.box.user-sign-up
+{
+	background-color: #1123;
+}
+
+.box.user-log-in
+{
+	background-color: #DF9191;
+}

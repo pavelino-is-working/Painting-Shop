@@ -1,18 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Paintings</h1>
-
-<table>
+<div class="container">
+  <br>
+  <br>
+<table class="table is-bordered is-striped is-fullwidth">
   <thead>
     <tr>
-      <th>Id painting</th>
+      <th></th>
       <th>Name painting</th>
-      <th>Img root</th>
       <th>Type</th>
       <th>Dominant color</th>
       <th>Price</th>
-      <th>Height</th>
-      <th>Width</th>
+      <th>Dimensions</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,17 +19,17 @@
   <tbody>
     <% @paintings.each do |painting| %>
       <tr>
-        <td><%= painting.id_painting %></td>
-        <td><%= painting.name_painting %></td>
-        <td><%= painting.img_root %></td>
-        <td><%= painting.type %></td>
+        <td >
+          <figure class="image is-9x16" style="width: 5rem;">
+              <img src="https://bulma.io/images/placeholders/360x640.png" alt="Placeholder image">
+          </figure></td>
+        <td><%=link_to painting.name_painting, painting %></td>
+        <td><%= painting.painting_type %></td>
         <td><%= painting.dominant_color %></td>
         <td><%= painting.price %></td>
-        <td><%= painting.height %></td>
-        <td><%= painting.width %></td>
-        <td><%= link_to 'Show', painting %></td>
-        <td><%= link_to 'Edit', edit_painting_path(painting) %></td>
-        <td><%= link_to 'Destroy', painting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= painting.width %> X <%= painting.height %></td>
+        <td><%= link_to 'Edit', edit_painting_path(painting), class:"button is-info" %></td>
+        <td><%= link_to 'Destroy', painting, method: :delete, data: { confirm: 'Are you sure?' },class:"button is-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +37,5 @@
 
 <br>
 
-<%= link_to 'New Painting', new_painting_path %>
+<%= link_to 'New Painting', new_painting_path, class:"button" %>
+</div>

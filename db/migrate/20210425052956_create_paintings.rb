@@ -1,10 +1,10 @@
 class CreatePaintings < ActiveRecord::Migration[6.1]
   def change
     create_table :paintings do |t|
-      t.int :id_painting
+      t.integer :id_painting
       t.string :name_painting
       t.string :img_root
-      t.string :type
+      t.string :painting_type
       t.string :dominant_color
       t.decimal :price
       t.decimal :height

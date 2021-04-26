@@ -1,44 +1,47 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id painting:</strong>
-  <%= @painting.id_painting %>
-</p>
+  <div class="container">
+    <div class="columns">
 
-<p>
-  <strong>Name painting:</strong>
-  <%= @painting.name_painting %>
-</p>
+      <div class="column is-quarter"  >
 
-<p>
-  <strong>Img root:</strong>
-  <%= @painting.img_root %>
-</p>
+        <div class="card"style="width: 15rem;">
+          <div class="card-image" >
+            <figure class="image is-3by4" >
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+          </div>
 
-<p>
-  <strong>Type:</strong>
-  <%= @painting.type %>
-</p>
+          <div class="content" >
+           <p class="title">Author Dummy</p>
+          <p >Rate Dummy
+          #####[][][][][]
+          </p> 
+          </div>
+        </div>
 
-<p>
-  <strong>Dominant color:</strong>
-  <%= @painting.dominant_color %>
-</p>
+      </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @painting.price %>
-</p>
+      <div class="column is-half">
+        <div class="box">
+          <p class="title"><%= @painting.name_painting %></p>
+          <p>Type: <%= @painting.painting_type %></p>
+          <p>Dominant Color: <%= @painting.dominant_color %></p>
+          <p>Dimensions: <%= @painting.width %> X <%= @painting.height%></p>
+        </div>
+      </div>
 
-<p>
-  <strong>Height:</strong>
-  <%= @painting.height %>
-</p>
-
-<p>
-  <strong>Width:</strong>
-  <%= @painting.width %>
-</p>
-
-<%= link_to 'Edit', edit_painting_path(@painting) %> |
-<%= link_to 'Back', paintings_path %>
+       <div class="column is-quarter">
+        <div class="box">
+          <p class="title is-2">Price: <%= @painting.price %> </p>
+          <button class="button is-info">Buy</button>
+          <button class="button is-info">Promote</button>
+        </div>
+      </div>
+  </div>
+  <div class="column is-quarter">
+    <div class="column" style="text-align:right;">
+      <div class="box"> Rate this: Yes No
+      </div>
+    </div>
+  </div>
+</div>

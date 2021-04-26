@@ -1,6 +1,6 @@
 class PaintingsController < ApplicationController
   before_action :set_painting, only: %i[ show edit update destroy ]
-
+ 
   # GET /paintings or /paintings.json
   def index
     @paintings = Painting.all
@@ -12,7 +12,7 @@ class PaintingsController < ApplicationController
 
   # GET /paintings/new
   def new
-    @painting = Painting.new
+    @painting = current_user.paintings.build
   end
 
   # GET /paintings/1/edit
@@ -21,7 +21,7 @@ class PaintingsController < ApplicationController
 
   # POST /paintings or /paintings.json
   def create
-    @painting = Painting.new(painting_params)
+    @painting = current_user.paintings.build(painting_params)
 
     respond_to do |format|
       if @painting.save
@@ -64,6 +64,6 @@ class PaintingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def painting_params
-      params.require(:painting).permit(:id_painting, :name_painting, :img_root, :type, :dominant_color, :price, :height, :width)
+      params.require(:painting).permit(:id_painting, :name_painting, :img_root, :painting_type, :dominant_color, :price, :height, :width)
     end
 end

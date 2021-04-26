@@ -7,13 +7,23 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if flash[:notice]%>
+    <div class="notification is-primary global-notification">
     <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
+    </div>
+    <% end %>
+    <% if flash[:alert] %>
+    <div class="notification is-danger global-notification"></div>
+    <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+       
+      <%= render 'paintings/header' %>
     <%= yield %>
   </body>
 </html>

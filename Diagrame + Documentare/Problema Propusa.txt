@@ -1,0 +1,8 @@
+Magazin de arta/picturi/tablouri 
+
+Cumparatori: care au cont, bani in cont, email,nume , prenume, adresa , functionalitate search picturi, cos de cumparaturi , efectueze plata cu mai multe metode de plata
+Artistii: cont, email,nume ,prenume , vanzare tablouri, editeaza tablouri, popularitate, cont bancar(optional),  
+Tablouri: tipul, culoare predominant, pret, inaltime si latime,nume_tablouri, poza, (Artistul)
+Admin: statistici, eliminare cont (!!!!), promovare tablou, eliminare tablou
+cerere:
+- titanicul care se scufunda la pagina de pornire site-ului  
