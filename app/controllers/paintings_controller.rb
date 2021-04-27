@@ -1,5 +1,7 @@
 class PaintingsController < ApplicationController
   before_action :set_painting, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
  
   # GET /paintings or /paintings.json
   def index
@@ -61,9 +63,14 @@ class PaintingsController < ApplicationController
     def set_painting
       @painting = Painting.find(params[:id])
     end
+  def correct_user
+    @painting = current_user.painting.find_by(id: params[:id])
+    redirect_to paintings_path, notice: "Not Autohrized User" if @frined.nil?
+  end
+    
 
     # Only allow a list of trusted parameters through.
     def painting_params
-      params.require(:painting).permit(:id_painting, :name_painting, :img_root, :painting_type, :dominant_color, :price, :height, :width)
+      params.require(:painting).permit(:id_painting, :name_painting, :img_root, :painting_type, :dominant_color, :price, :height, :width, :user_id)
     end
 end

@@ -36,7 +36,8 @@ end
 gem 'bulma-rails', '~> 0.9.1'
 gem 'simple_form', '~> 5.1'
 gem 'devise', '~> 4.7', '>= 4.7.3'
-
+gem 'carrierwave', '~> 2.2', '>= 2.2.1'
+gem 'mini_magick', '~> 4.11' 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'

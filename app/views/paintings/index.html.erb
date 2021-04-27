@@ -18,6 +18,7 @@
 
   <tbody>
     <% @paintings.each do |painting| %>
+    <% if painting.user == current_user%>
       <tr>
         <td >
           <figure class="image is-9x16" style="width: 5rem;">
@@ -31,6 +32,7 @@
         <td><%= link_to 'Edit', edit_painting_path(painting), class:"button is-info" %></td>
         <td><%= link_to 'Destroy', painting, method: :delete, data: { confirm: 'Are you sure?' },class:"button is-danger" %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

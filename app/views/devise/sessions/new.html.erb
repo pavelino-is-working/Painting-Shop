@@ -7,13 +7,7 @@
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-        <div class="column is 4"><div class="title">Log in</div></div>    
-
-          <div class="field">
-            <div class="control">
-              <%= f.input :username, required: false, input_html: { class: "input" }, wrapper: false, label_html: {class: "label"} %>
-            </div>
-          </div>
+        <div class="column is 4"><div class="title">Login</div></div>    
 
           <div class="field">
             <div class="control">
@@ -37,10 +31,10 @@
 
           <div class="field">
             <div class="control">
-                <%= link_to "Log in", new_session_path(resource_name), class:"button" %>
+                <%= f.submit "Login", class:"button is-info"%>
             </div>
           </div>
-          <%= render "devise/shared/links" %>
+          
       <% end %>
 
       
