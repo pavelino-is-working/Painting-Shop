@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   end
 
   def get_rows
-  	@rows = @number_records % 5
+  	@rows = @number_records / 5
   	if @number_records % 5 != 0
   		@rows = @rows + 1
   	end
