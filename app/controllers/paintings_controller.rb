@@ -58,19 +58,22 @@ class PaintingsController < ApplicationController
     end
   end
 
+  def correct_user
+    @painting = current_user.paintings.find_by(id: params[:id])
+    redirect_to paintings_path, notice: "Not Autohrized User" if @painting.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_painting
       @painting = Painting.find(params[:id])
     end
-  def correct_user
-    @painting = current_user.painting.find_by(id: params[:id])
-    redirect_to paintings_path, notice: "Not Autohrized User" if @frined.nil?
-  end
+
+
     
 
     # Only allow a list of trusted parameters through.
     def painting_params
-      params.require(:painting).permit(:id_painting, :name_painting, :img_root, :painting_type, :dominant_color, :price, :height, :width, :user_id)
+      params.require(:painting).permit(:id_painting, :name_painting, :img_root, :painting_type, :dominant_color, :price, :height, :width, :user_id, :image)
     end
 end

@@ -22,8 +22,9 @@
       <tr>
         <td >
           <figure class="image is-9x16" style="width: 5rem;">
-              <img src="https://bulma.io/images/placeholders/360x640.png" alt="Placeholder image">
-          </figure></td>
+              <%= image_tag painting.image.url(:thumb) %>  
+          </figure>
+          </td>
         <td><%=link_to painting.name_painting, painting %></td>
         <td><%= painting.painting_type %></td>
         <td><%= painting.dominant_color %></td>

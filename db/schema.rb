@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_27_100507) do
+ActiveRecord::Schema.define(version: 2021_04_27_111946) do
 
   create_table "paintings", force: :cascade do |t|
     t.integer "id_painting"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_04_27_100507) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "image"
     t.index ["user_id"], name: "index_paintings_on_user_id"
   end
 

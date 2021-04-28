@@ -7,14 +7,37 @@
     <div class="field"><%= f.input :id_painting, label: "Id Painting", input_html:{class: "text"}, wrapper: false, label_html: {class: "label"} %>  </div>
     <div class="field"><%= f.input :name_painting, label: "Name Painting", input_html:{class: "text"}, wrapper: false, label_html: {class: "label"} %>  </div>
     <div class="field"><%= f.input :img_root, label: "Image Root", input_html:{class: "text"}, wrapper: false, label_html: {class: "label"} %>  </div>
-    <div class="field"><%= f.input :painting_type, label: "Painting Type", input_html:{class: "text"}, wrapper: false, label_html: {class: "label"} %>  </div>
+    
+    <div class="control">
+              <label class="label">Types</label>
+              <div class="control has-icons-left">
+                <span class="select">
+                  <%= f.input_field :painting_type, collection: Painting::PAINTING_TYPE, prompt: "Select type" %>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-tag"></i>
+                </span>
+              </div>
+
     <div class="field"><%= f.input :dominant_color, label: "Dominant Color", input_html:{class: "text"}, wrapper: false, label_html: {class: "label"} %>  </div>
     <div class="field"><%= f.input :price, label: "Price", input_html:{class: "text"}, wrapper: false, label_html: {class: "label"} %>  </div>
     <div class="field"><%= f.input :height, label: "Height", input_html:{class: "text"}, wrapper: false, label_html: {class: "label"} %>  </div>
     <div class="field"><%= f.input :width, label: "Width", input_html:{class: "text"}, wrapper: false, label_html: {class: "label"} %>  </div>
     <div class="field"><%= f.hidden_field :user_id, :value => "some value"   %>  </div> 
     
-    
+    <div class="field">
+          
+            <label class="label">Add images</label>
+              <div class="file">
+                <label class="file-label">
+                  <%= f.input :image, as: :file, input_html: { class:"file-input paintings-image" }, label: false, wrapper: false %>
+                    <span class="file-cta">
+                      <span class="file-label">Choose a file…</span>
+                    </span>
+                </label>
+              </div>
+          </div>
+
   </div>
 
   <div class="form-actions">
