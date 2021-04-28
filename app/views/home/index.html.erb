@@ -31,7 +31,7 @@
 
 				<footer class="card-footer">
 			    <% if painting.user != current_user%>
-			    <!--%= link_to 'Buy', paintings_buy_path, class:"button is-info" %-->
+			    <%= link_to 'Buy',  buy_painting_path(painting), class:"button is-info" %>
 			    <% end %>
 		
 			</footer>

@@ -1,6 +1,6 @@
 class PaintingsController < ApplicationController
   before_action :set_painting, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :buy]
   before_action :correct_user, only: [:edit, :update, :destroy]
  
   # GET /paintings or /paintings.json
@@ -10,6 +10,10 @@ class PaintingsController < ApplicationController
 
   # GET /paintings/1 or /paintings/1.json
   def show
+  end
+
+  def buy
+    @painting = Painting.find(params[:id])
   end
 
   # GET /paintings/new
