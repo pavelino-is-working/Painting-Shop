@@ -4,9 +4,102 @@
 	<div class="columns">
 		<div class="column is-9">
 			<div class="box">
-				hello
+
+				<div class="columns">
+					<div class="column is-one-third">
+						<p class="title is-5">First Name</p>
+						<input class="input" type="text" placeholder="Example: Smith">
+					</div>
+
+					<div class="column is-one-third">
+						<p class="title is-5">Last Name</p>
+						<input class="input" type="text" placeholder="Example: Jhon">
+					</div>
+
+					<div class="column is-one-third">
+						<p class="title is-5">Phone Number</p>
+						<input class="input" type="tel" placeholder="Example: 0712 123 123">
+					</div>
+					
+					
+				</div>
+				<div class="title">Address</div>
+				<textarea class="textarea is-info" rows="3" cols="20"></textarea>
+
+				<br>
+
+				<div class="columns">
+					<div class="column is-one-fifth">
+						<p class="title is-5">Postal Code</p>
+						<input class="input" type="number">
+					</div>
+					<div class="column is-one-fifth">
+						<p class="title is-5">Choose your country</p>
+						<div class="select">
+						  <select>
+						    <option>Country 1</option>
+						    <option>Country 2</option>
+						    <option>Country 3</option>
+						    <option>Country 4</option>
+						    <option>Country 9001</option>
+						    <option>Country 5</option>
+						    <option>Country 6</option>
+						    <option>Country 10</option>
+						  </select>
+						</div>
+					</div>
+
+					<div class="column is-one-fifth">
+						<p class="title is-5">Chose your city</p>
+						<div class="select">
+						  <select>
+						    <option>City 1</option>
+						    <option>Star City</option>
+						    <option>New City</option>
+						    <option>Time City</option>
+						    <option>Gotham City</option>
+						    <option>Purple City</option>
+						    <option>Ct</option>
+						    <option>10</option>
+						  </select>
+						</div>
+					</div>
+				</div>
+
+				<div class="columns">
+					<div class="column is-one-fifth">
+						<p class="title is-5">Payment Method</p>
+						<div class="select">
+						  <select>
+						    <option>Delivery</option>
+						    <option>Card</option>
+						  </select>
+						</div>
+					</div>
+
+					<div class="column is-one-fifth">
+						<%= link_to 'Buy', root_path, class:"button is-large is-fullwidth is-info" %>
+					</div>
+				</div>
+
 			</div>
 		</div>
-	</div>
 
-</div
+		<div class="column">
+			<div class="card">
+
+				  <div class="card-image">
+				    <figure class="image is-1x3" style="width: 20rem;" >
+				        <%= image_tag @painting.image.url(:thumb) %> 
+				    </figure>
+				  </div>
+
+				 <div class="card-content">
+					<p class="title is-1"><%= @painting.price %></p>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>

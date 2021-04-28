@@ -5,3 +5,5 @@ class Painting < ApplicationRecord
 PAINTING_TYPE = %w{Watercolor Pastel Acrylic Charcoal Sketch Ink Spray Tempera Sand }
 
 end
+
+			

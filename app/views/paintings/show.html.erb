@@ -1,5 +1,6 @@
 
   <div class="container">
+    <div class="box">
     <div class="columns">
 
       <div class="column is-quarter"  >
@@ -13,35 +14,30 @@
 
           <div class="content" >
            <p class="title"><%= @painting.user.username %></p>
-          <p >Rate Dummy
-          #####[][][][][]
-          </p> 
           </div>
         </div>
 
       </div>
 
       <div class="column is-half">
-        <div class="box">
+        
           <p class="title"><%= @painting.name_painting %></p>
           <p>Type: <%= @painting.painting_type %></p>
           <p>Dominant Color: <%= @painting.dominant_color %></p>
           <p>Dimensions: <%= @painting.width %> X <%= @painting.height%></p>
-        </div>
+      
       </div>
 
        <div class="column is-quarter">
-        <div class="box">
+        
           <p class="title is-2">Price: <%= @painting.price %> </p>
-          <button class="button is-info">Buy</button>
+          <% if @painting.user != current_user%>
+          <%= link_to 'Buy',  buy_painting_path(@painting), class:"button is-info" %>
+          <% else %>
           <button class="button is-info">Promote</button>
+          <% end %>
         </div>
-      </div>
+      
   </div>
-  <div class="column is-quarter">
-    <div class="column" style="text-align:right;">
-      <div class="box"> Rate this: Yes No
-      </div>
-    </div>
-  </div>
+</div>
 </div>

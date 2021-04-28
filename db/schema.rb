@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_27_111946) do
+ActiveRecord::Schema.define(version: 2021_04_28_122815) do
 
   create_table "paintings", force: :cascade do |t|
-    t.integer "id_painting"
     t.string "name_painting"
     t.string "img_root"
     t.string "painting_type"

@@ -1,5 +1,5 @@
 <div class="section blue">
-		<div class="title">Welcome To My Site</div>
+		<div class="title">Welcome To My Site </div>
 		<p class="subtittle">Here you can buy or sell paintings</p>
 </div>
 
@@ -13,36 +13,49 @@
 
 <div class="section blue">
 	<div class="container">
-		<div class="columns">
-
-		<% @paintings.each do |painting| %>
-			<div class="column is-one-fifth">
-			<div class="card">
-
-			  <div class="card-image">
-			    <figure class="image is-9x16" style="width: 15rem;">
-			        <%= image_tag painting.image.url(:thumb) %> 
-			    </figure>
-			  </div>
-
-			 <div class="card-content">
-			    <p><%= link_to painting.name_painting, painting %></p>
-				<p><%= painting.price %></p>
-
-				<footer class="card-footer">
-			    <% if painting.user != current_user%>
-			    <%= link_to 'Buy',  buy_painting_path(painting), class:"button is-info" %>
-			    <% end %>
 		
-			</footer>
-			</div>
-	    	</div>   
-	  		</div>
 
-			
-				
-    <% end %>
+			<%for row in 0..@rows-1 %>
 
-    	</div>
+			<div class="columns">
+
+				<% if @number_records - 5*row >= 5 %>
+				<% columns = 5 %>
+				<% else %>
+				<% columns = @number_records - 5*row %>
+				<% end %>
+
+		 		<%for column in 0..columns-1 %>
+			 		<% k = 5*(row ) + column  %>
+			 		<% painting = @only_25_paintings[k] %>
+						<div class="column is-one-fifth">
+
+						<div class="card">
+
+						  <div class="card-image">
+						    <figure class="image is-9x16" style="width: 15rem;">
+						        <%= image_tag painting.image.url(:thumb) %> 
+						    </figure>
+						  </div>
+
+							<div class="card-content">
+						    	<p><%= link_to painting.name_painting, painting %></p>
+								<p><%= painting.price %></p>
+
+								<footer class="card-footer">
+						    	<% if painting.user != current_user%>
+						    	<%= link_to 'Buy',  buy_painting_path(painting), class:"button is-info" %>
+						    	<% end %>
+					
+								</footer>
+							</div>
+				    	</div>   
+		  				</div>
+
+    			<% end %>
+    			</div>
+    		<%end%>
+
+    	
 		</div>
 </div>
